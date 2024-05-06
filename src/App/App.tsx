@@ -8,15 +8,15 @@ import {
 // Pages
 import RootLayout from "../layouts/RootLayout/RootLayout";
 import NotFound from "../components/NotFound/NotFound";
-import About from "../components/About/About";
-import Home from "../components/Home/Home";
-import Housing from "../components/Housing/Housing";
+import About from "../pages/About/About";
+import Home from "../pages/Home/Home";
+import Housing from "../pages/Housing/Housing";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<RootLayout />}>
       <Route index element={<Home />}></Route>
-      <Route path="logement" element={<Housing />}></Route>
+      <Route path="logement/:id" element={<Housing />}></Route>
       <Route path="about" element={<About />}></Route>
       <Route path="*" element={<NotFound />}></Route>
     </Route>
