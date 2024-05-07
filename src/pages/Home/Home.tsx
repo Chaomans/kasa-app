@@ -1,3 +1,4 @@
+import Banner from "../../components/Banner/Banner";
 import HouseCard from "../../components/HouseCard/HouseCard";
 import useHouses from "../../utils/useHouses";
 import styles from "./home.module.scss";
@@ -14,9 +15,7 @@ const Home = () => {
       )}
       {houses && (
         <>
-          <div className={styles.banner}>
-            <p className={styles.bannerText}>Chez vous, et partout ailleurs</p>
-          </div>
+          <Banner text="Chez vous, et partout ailleurs" page="home" />
           <div className={styles.cards}>
             {houses.map((house) => (
               <HouseCard house={house} key={house.id} />
