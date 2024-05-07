@@ -4,6 +4,7 @@ import Header from "../../components/Header/Header";
 import "./rootLayout.module.scss";
 import useFetch from "../../utils/useFetch";
 import { UseFetchReturn } from "../../types/types";
+import styles from "./rootLayout.module.scss";
 
 const RootLayout = () => {
   // const { data, isPending, error } = useFetch(
@@ -13,7 +14,7 @@ const RootLayout = () => {
 
   return (
     <>
-      <main>
+      <main className={styles.main}>
         <Header />
         <Outlet context={{ data, isPending, error } satisfies UseFetchReturn} />
       </main>

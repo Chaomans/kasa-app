@@ -1,4 +1,6 @@
-footer {
+$footer-height: 210px;
+
+.footer {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -7,8 +9,12 @@ footer {
   color: #fff;
   font-size: 24px;
   font-weight: 500;
+  position: absolute;
+  bottom: 0;
+  height: $footer-height;
+  width: 100%;
 
-  img {
+  .img {
     width: 122px;
     height: auto;
   }

@@ -1,16 +1,9 @@
 $footer-height: 210px;
 
-main {
+.main {
   height: 100%;
   width: 90%;
   max-width: 1400px;
   margin: auto;
   padding-bottom: $footer-height;
-}
-
-footer {
-  position: absolute;
-  bottom: 0;
-  height: $footer-height;
-  width: 100%;
 }
