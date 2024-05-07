@@ -1,0 +1,26 @@
+.notFound {
+  width: 100%;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  color: #ff6060;
+
+  .code {
+    font-weight: 700;
+    font-size: 288px;
+  }
+
+  .errorText {
+    font-weight: 500;
+    font-size: 36px;
+  }
+
+  .return {
+    color: #000;
+    text-decoration: underline;
+    font-weight: 500;
+    font-size: 18px;
+  }
+}
