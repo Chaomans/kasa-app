@@ -1,12 +1,29 @@
+import HouseCard from "../../components/HouseCard/HouseCard";
 import useHouses from "../../utils/useHouses";
+import styles from "./home.module.scss";
 
 const Home = () => {
   const { data: houses, isPending, error } = useHouses();
   return (
-    <div className="home">
-      {error && <div className="home__error">{error}</div>}
-      {isPending && <div className="pending">Chargement</div>}
-      {houses && <div className="home__houses">houses</div>}
+    <div className={styles.home}>
+      {error && <div className={styles.error}>{error}</div>}
+      {isPending && (
+        <div className={styles.pending}>
+          <p>Chargement...</p>
+        </div>
+      )}
+      {houses && (
+        <>
+          <div className={styles.banner}>
+            <p className={styles.bannerText}>Chez vous, et partout ailleurs</p>
+          </div>
+          <div className={styles.cards}>
+            {houses.map((house) => (
+              <HouseCard house={house} key={house.id} />
+            ))}
+          </div>
+        </>
+      )}
     </div>
   );
 };

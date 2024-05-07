@@ -15,7 +15,7 @@ export type House = {
 };
 
 export type UseFetchReturn = {
-  data: House | null;
+  data: House[] | null;
   isPending: boolean;
-  error: Error | null;
+  error: string | null;
 };
