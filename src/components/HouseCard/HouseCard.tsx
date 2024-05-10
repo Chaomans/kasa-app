@@ -1,5 +1,5 @@
 import { NavLink } from "react-router-dom";
-import { House } from "../../types/types";
+import { House } from "../../utils/types";
 import styles from "./houseCard.module.scss";
 
 type HouseCardProps = {

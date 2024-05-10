@@ -1,0 +1,89 @@
+@mixin slide($duration) {
+  $name: slide-#{unique-id()};
+
+  @keyframes #{$name} {
+    @content;
+  }
+
+  animation-name: $name;
+  animation-duration: $duration;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+.descriptionBlock {
+  position: relative;
+  max-width: 1024px;
+  width: clamp(330px, 85%, 1024px);
+  overflow: hidden;
+  padding-bottom: 20px;
+
+  .block {
+    background: $primary-color;
+    color: $white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 5px;
+    padding: 10px 20px 10px 15px;
+    cursor: pointer;
+    position: relative;
+    z-index: 1;
+
+    .title {
+      font-size: 24px;
+      font-weight: 700;
+      user-select: none;
+    }
+
+    .arrow {
+      transform: rotate(0);
+      transition: all 0.3s;
+
+      &.turned {
+        transform: rotate(-180deg);
+      }
+    }
+  }
+
+  .description {
+    border-radius: 0 0 5px 5px;
+    padding: 20px;
+    background-color: $grey;
+    color: #000;
+    font-size: 18px;
+    font-weight: 400;
+    transition: all 0.3s;
+    position: relative;
+    z-index: -1;
+    display: none;
+    @include slide(0.3s) {
+      0% {
+        display: block;
+        transform: translateY(0);
+        height: 100%;
+      }
+      100% {
+        display: none;
+        transform: translateY(-300px);
+        height: 0;
+      }
+    }
+
+    &.open {
+      display: block;
+      @include slide(0.3s) {
+        0% {
+          display: none;
+          transform: translateY(-300px);
+          height: 0;
+        }
+        100% {
+          display: block;
+          transform: translateY(0);
+          height: 100%;
+        }
+      }
+    }
+  }
+}
