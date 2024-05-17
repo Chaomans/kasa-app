@@ -3,11 +3,11 @@ import DescriptionBlock from "../../components/DescriptionBlock/DescriptionBlock
 import { useParams } from "react-router-dom";
 import styles from "./houses.module.scss";
 import { House } from "../../utils/types";
-import useHouses from "../../utils/useHouses";
+import { useData } from "../../Providers/DataProvider";
 
 const Housing = () => {
   const { id } = useParams();
-  const { data: houses, isPending, error } = useHouses();
+  const { data: houses, isPending, error } = useData();
   const [house, setHouse] = useState<House>();
 
   useEffect(() => {

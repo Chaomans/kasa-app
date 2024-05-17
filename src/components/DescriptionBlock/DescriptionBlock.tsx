@@ -1,5 +1,6 @@
 import { ReactNode, useState } from "react";
 import styles from "./descriptionBlock.module.scss";
+import arrow from "/assets/Arrow.svg";
 
 type DescriptionBlockProps = {
   title: string;
@@ -30,7 +31,7 @@ const DescriptionBlock = ({
         <div>
           <img
             className={styles.arrow + (isOpen ? ` ${styles.turned}` : "")}
-            src="/assets/Arrow.svg"
+            src={arrow}
             alt="Arrow showing the state open or close of the description block"
           />
         </div>

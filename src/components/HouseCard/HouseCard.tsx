@@ -8,7 +8,7 @@ type HouseCardProps = {
 
 const HouseCard = ({ house }: HouseCardProps) => {
   return (
-    <NavLink to={`logement/${house.id}`} className={styles.card}>
+    <NavLink to={`/logement/${house.id}`} className={styles.card}>
       <img
         src={house.cover}
         alt={`${house.title}'s presentation image.`}

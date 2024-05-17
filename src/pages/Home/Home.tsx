@@ -1,10 +1,10 @@
+import { useData } from "../../Providers/DataProvider";
 import Banner from "../../components/Banner/Banner";
 import HouseCard from "../../components/HouseCard/HouseCard";
-import useHouses from "../../utils/useHouses";
 import styles from "./home.module.scss";
 
 const Home = () => {
-  const { data: houses, isPending, error } = useHouses();
+  const { data: houses, isPending, error } = useData();
   return (
     <div className={styles.home}>
       {error && <div className={styles.error}>{error}</div>}

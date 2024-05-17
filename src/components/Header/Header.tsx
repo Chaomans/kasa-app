@@ -1,12 +1,13 @@
 import { NavLink } from "react-router-dom";
 import styles from "./header.module.scss";
+import logo from "/assets/kasa_logo.svg";
 
 const Header = () => {
   return (
     <header className={styles.header}>
       <nav className={styles.nav}>
         <NavLink to="/" className={styles.headerLink}>
-          <img src="/assets/kasa_logo.svg" alt="kasa's logo." />
+          <img src={logo} alt="kasa's logo." />
         </NavLink>
         <div className={styles.links}>
           <NavLink
@@ -18,7 +19,7 @@ const Header = () => {
             Accueil
           </NavLink>
           <NavLink
-            to="about"
+            to="/about"
             className={({ isActive }) =>
               styles.headerLink + (isActive ? " " + styles.active : "")
             }

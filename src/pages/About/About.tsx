@@ -2,7 +2,6 @@ import { useState } from "react";
 import Banner from "../../components/Banner/Banner";
 import DescriptionBlock from "../../components/DescriptionBlock/DescriptionBlock";
 import styles from "./about.module.scss";
-import { IStringMap } from "../../utils/interfaces";
 
 const About = () => {
   const [descBlockStates, setDescBlockStates] = useState([
