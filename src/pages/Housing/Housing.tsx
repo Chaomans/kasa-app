@@ -4,6 +4,9 @@ import { useParams } from "react-router-dom";
 import styles from "./houses.module.scss";
 import { House } from "../../utils/types";
 import { useData } from "../../Providers/DataProvider";
+import Tags from "../../components/Tags/Tags";
+import Stars from "../../components/Stars/Stars";
+import NotFound from "../../components/NotFound/NotFound";
 
 const Housing = () => {
   const { id } = useParams();
@@ -53,12 +56,24 @@ const Housing = () => {
           <div className="images"></div>
           <div className="informations">
             <div className="principal">
-              <div className="location"></div>
-              <div className="owner"></div>
+              <div className="location_infos">
+                <p className="title">{house.title}</p>
+                <p className="location">{house.location}</p>
+              </div>
+              <div className="owner">
+                <p className="name">
+                  {house.host.name.split(" ")[0]}
+                  <br />
+                  {house.host.name.split(" ")[1]}
+                </p>
+                <p className="picture">
+                  <img src={house.host.picture} alt="Host's picture." />
+                </p>
+              </div>
             </div>
             <div className="other">
-              <div className="tags"></div>
-              <div className="stars"></div>
+              <Tags tags={house.tags} />
+              <Stars note={parseInt(house.rating, 10)} />
             </div>
             <DescriptionBlock
               id="description"
@@ -79,6 +94,7 @@ const Housing = () => {
           </div>
         </>
       )}
+      {!error && !isPending && !house && <NotFound />}
     </div>
   );
 };

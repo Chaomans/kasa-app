@@ -24,7 +24,7 @@ const Header = () => {
               styles.headerLink + (isActive ? " " + styles.active : "")
             }
           >
-            À propos
+            À Propos
           </NavLink>
         </div>
       </nav>
