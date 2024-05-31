@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import DescriptionBlock from "../../components/DescriptionBlock/DescriptionBlock";
 import { useParams } from "react-router-dom";
-import styles from "./houses.module.scss";
+import styles from "./housing.module.scss";
 import { House } from "../../utils/types";
 import { useData } from "../../Providers/DataProvider";
 import Tags from "../../components/Tags/Tags";
@@ -53,44 +53,54 @@ const Housing = () => {
       )}
       {house && (
         <>
-          <div className="images"></div>
-          <div className="informations">
-            <div className="principal">
-              <div className="location_infos">
-                <p className="title">{house.title}</p>
-                <p className="location">{house.location}</p>
+          <div className={styles.images}></div>
+          <div className={styles.informations}>
+            <div className={styles.principal}>
+              <div className={styles.location_infos}>
+                <p className={styles.title}>{house.title}</p>
+                <p className={styles.location}>{house.location}</p>
               </div>
-              <div className="owner">
-                <p className="name">
+              <div className={styles.owner}>
+                <p className={styles.name}>
                   {house.host.name.split(" ")[0]}
                   <br />
                   {house.host.name.split(" ")[1]}
                 </p>
-                <p className="picture">
-                  <img src={house.host.picture} alt="Host's picture." />
-                </p>
+                <div className={styles.picture_div}>
+                  <img
+                    className={styles.picture}
+                    src={house.host.picture}
+                    alt="Host's picture."
+                  />
+                </div>
               </div>
             </div>
-            <div className="other">
+            <div className={styles.other}>
               <Tags tags={house.tags} />
               <Stars note={parseInt(house.rating, 10)} />
             </div>
-            <DescriptionBlock
-              id="description"
-              title="Description"
-              onChangeState={handleChangeState}
-            >
-              {house.description}
-            </DescriptionBlock>
-            <DescriptionBlock
-              id="equipments"
-              title="Équipements"
-              onChangeState={handleChangeState}
-            >
-              {house.equipments.map((equip) => (
-                <p key={equip}>{equip}</p>
-              ))}
-            </DescriptionBlock>
+            <div className={styles.descriptionblocks}>
+              <div className={styles.descriptionblock}>
+                <DescriptionBlock
+                  id="description"
+                  title="Description"
+                  onChangeState={handleChangeState}
+                >
+                  {house.description}
+                </DescriptionBlock>
+              </div>
+              <div className={styles.descriptionblock}>
+                <DescriptionBlock
+                  id="equipments"
+                  title="Équipements"
+                  onChangeState={handleChangeState}
+                >
+                  {house.equipments.map((equip) => (
+                    <p key={equip}>{equip}</p>
+                  ))}
+                </DescriptionBlock>
+              </div>
+            </div>
           </div>
         </>
       )}

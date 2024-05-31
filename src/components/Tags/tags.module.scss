@@ -1,0 +1,17 @@
+.tags {
+  display: flex;
+  gap: 15px;
+
+  .tag {
+    text-align: center;
+    line-height: 25px;
+    min-width: 115px;
+    height: 25px;
+    background-color: $primary-color;
+    color: white;
+    font-weight: 700;
+    font-size: 14px;
+    border-radius: 10px;
+    padding: 0 10px;
+  }
+}

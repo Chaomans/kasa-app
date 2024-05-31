@@ -1,0 +1,64 @@
+.informations {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+
+  .principal {
+    display: flex;
+    justify-content: space-between;
+
+    .location_infos {
+      font-weight: 500;
+      .title {
+        color: $primary-color;
+        font-size: 36px;
+      }
+      .location {
+        font-size: 18px;
+      }
+    }
+
+    .owner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 15px;
+      width: fit-content;
+
+      .name {
+        display: block;
+        font-size: 18px;
+        font-weight: 500;
+        line-height: 25.67px;
+        color: $primary-color;
+        text-align: right;
+      }
+
+      .picture_div {
+        width: 64px;
+        height: 64px;
+
+        .picture {
+          width: 100%;
+          height: 100%;
+          border-radius: 50%;
+        }
+      }
+    }
+  }
+
+  .other {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .descriptionblocks {
+    display: flex;
+    // grid-template-columns: repeat(2, minmax(340px, 1fr));
+    justify-content: space-between;
+    flex-wrap: wrap;
+    .descriptionblock {
+      width: 47.5%;
+    }
+  }
+}

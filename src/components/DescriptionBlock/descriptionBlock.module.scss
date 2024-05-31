@@ -14,7 +14,8 @@
 .descriptionBlock {
   position: relative;
   max-width: 1024px;
-  width: clamp(330px, 85%, 1024px);
+  min-width: 330px;
+  width: 100%;
   overflow: hidden;
   padding-bottom: 20px;
 
