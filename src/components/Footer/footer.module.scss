@@ -17,5 +17,9 @@ $footer-height: 210px;
   .img {
     width: 122px;
     height: auto;
+    flex: 2;
+  }
+  .rights {
+    flex: 1;
   }
 }
