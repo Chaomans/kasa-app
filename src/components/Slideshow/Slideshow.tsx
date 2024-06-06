@@ -1,4 +1,4 @@
-import { BaseSyntheticEvent, useState } from "react";
+import { useState } from "react";
 import styles from "./slideshow.module.scss";
 
 type SlideshowProps = {
