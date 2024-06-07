@@ -20,7 +20,8 @@ const Banner = ({ text, page }: BannerProps) => {
       {bannerText && (
         <p className={styles.bannerText}>
           {bannerText.split("\n").map((t, i) => {
-            if (i + 1 < bannerText.length) {
+            console.log(i + 1, bannerText.split("\n").length);
+            if (i + 1 < bannerText.split("\n").length) {
               return (
                 <span key={i}>
                   {t} <br />
