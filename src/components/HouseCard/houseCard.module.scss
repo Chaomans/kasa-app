@@ -1,5 +1,6 @@
 .card {
-  width: 340px;
+  max-width: 340px;
+  min-width: 290px;
   height: 340px;
   border-radius: 10px;
   background-color: #ff6060;
@@ -8,6 +9,11 @@
   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.4);
   transition: all 0.2s;
   margin: auto;
+
+  @media (max-width: 768px) {
+    width: 290px;
+    height: 290px;
+  }
 
   &:hover {
     box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.6);

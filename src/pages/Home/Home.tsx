@@ -5,6 +5,11 @@ import styles from "./home.module.scss";
 
 const Home = () => {
   const { data: houses, isPending, error } = useData();
+  const bannerText =
+    window.innerWidth <= 768
+      ? "Chez vous,\npartout et ailleurs"
+      : "Chez vous, partout et ailleurs";
+
   return (
     <div className={styles.home}>
       {error && <div className={styles.error}>{error}</div>}
@@ -15,7 +20,7 @@ const Home = () => {
       )}
       {houses && (
         <>
-          <Banner text="Chez vous, et partout ailleurs" page="home" />
+          <Banner text={bannerText} page="home" />
           <div className={styles.cards}>
             {houses.map((house) => (
               <HouseCard house={house} key={house.id} />

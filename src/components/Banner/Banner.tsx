@@ -1,3 +1,4 @@
+import { useState } from "react";
 import styles from "./banner.module.scss";
 
 type BannerProps = {
@@ -6,6 +7,8 @@ type BannerProps = {
 };
 
 const Banner = ({ text, page }: BannerProps) => {
+  const [bannerText, _] = useState<string>(text ?? "");
+
   return (
     <div
       className={
@@ -14,7 +17,20 @@ const Banner = ({ text, page }: BannerProps) => {
         (page === "about" ? " " + styles.about : "")
       }
     >
-      {text && <p className={styles.bannerText}>{text}</p>}
+      {bannerText && (
+        <p className={styles.bannerText}>
+          {bannerText.split("\n").map((t, i) => {
+            if (i + 1 < bannerText.length) {
+              return (
+                <span key={i}>
+                  {t} <br />
+                </span>
+              );
+            }
+            return t;
+          })}
+        </p>
+      )}
     </div>
   );
 };

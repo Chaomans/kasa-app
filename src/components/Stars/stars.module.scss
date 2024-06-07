@@ -5,6 +5,12 @@
   padding: 0 5px;
   margin-left: 40px;
 
+  @media (max-width: 768px) {
+    margin: 0;
+    padding: 0;
+    width: 120px;
+  }
+
   .star {
     display: block;
     width: 24px;
@@ -133,6 +139,11 @@
       54.885% 3.515%
     );
     background-color: $star-empty;
+
+    @media (max-width: 768px) {
+      width: 16px;
+      height: 16px;
+    }
 
     &.filled {
       background-color: $primary-color;

@@ -12,8 +12,8 @@ const Stars = ({ note }: StarsProps) => {
   }
   return (
     <div className={styles.stars}>
-      {filled.map((isFilled) => (
-        <span className={[styles.star, isFilled].join(" ")}></span>
+      {filled.map((isFilled, i) => (
+        <span className={[styles.star, isFilled].join(" ")} key={i}></span>
       ))}
     </div>
   );

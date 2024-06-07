@@ -18,8 +18,22 @@ $footer-height: 210px;
     width: 122px;
     height: auto;
     flex: 2;
+    @media (max-width: 768px) {
+      flex: none;
+    }
   }
   .rights {
     flex: 1;
+    @media (max-width: 768px) {
+      width: 122px;
+      text-align: center;
+      flex: none;
+    }
+  }
+
+  @media (max-width: 768px) {
+    font-size: 12px;
+    justify-content: center;
+    gap: 20px;
   }
 }

@@ -8,6 +8,10 @@
   justify-content: center;
   margin-bottom: 20px;
 
+  @media (max-width: 768px) {
+    height: 255px;
+  }
+
   .next,
   .previous {
     background: url("/slideshow_arrow.svg") center center / 90% calc(60px * 0.9)
@@ -17,15 +21,26 @@
     border: none;
     position: absolute;
     cursor: pointer;
+
+    @media (max-width: 768px) {
+      width: 11.67px;
+      height: 19.8px;
+    }
   }
 
   .next {
     right: 0;
     transform: rotate(180deg);
+    @media (max-width: 768px) {
+      right: 10px;
+    }
   }
 
   .previous {
     left: 0;
+    @media (max-width: 768px) {
+      left: 10px;
+    }
   }
 
   .imgDiv {
@@ -53,5 +68,9 @@
     color: white;
     font-weight: 500;
     font-size: 18px;
+
+    @media (max-width: 768px) {
+      display: none;
+    }
   }
 }

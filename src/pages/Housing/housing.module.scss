@@ -1,3 +1,7 @@
+$first-block-height: fit-content;
+$first-block-height-small-principal: 250px;
+$first-block-height-small-plus: 250px;
+
 .housing {
   padding: 20px 0;
 
@@ -9,16 +13,49 @@
     .principal {
       display: flex;
       justify-content: space-between;
+      min-height: 120px;
+      height: $first-block-height;
+
+      @media (max-width: 768px) {
+        flex-direction: column;
+        gap: 20px;
+      }
 
       .location_infos {
         font-weight: 500;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+
         .title {
           color: $primary-color;
           font-size: 36px;
+          @media (max-width: 768px) {
+            font-size: 18px;
+          }
         }
         .location {
           font-size: 18px;
+          margin-bottom: 15px;
+          @media (max-width: 768px) {
+            font-size: 14px;
+          }
         }
+      }
+    }
+
+    .plus {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: flex-end;
+      min-height: 120px;
+
+      @media (max-width: 768px) {
+        flex-direction: row-reverse;
+        min-height: fit-content;
+        align-items: center;
       }
 
       .owner {
@@ -35,11 +72,19 @@
           line-height: 25.67px;
           color: $primary-color;
           text-align: right;
+          @media (max-width: 768px) {
+            font-size: 14px;
+          }
         }
 
         .picture_div {
           width: 64px;
           height: 64px;
+
+          @media (max-width: 768px) {
+            width: 46px;
+            height: 46px;
+          }
 
           .picture {
             width: 100%;
@@ -50,18 +95,22 @@
       }
     }
 
-    .other {
-      display: flex;
-      justify-content: space-between;
-    }
-
     .descriptionblocks {
       display: flex;
       // grid-template-columns: repeat(2, minmax(340px, 1fr));
       justify-content: space-between;
       flex-wrap: wrap;
+
+      @media (max-width: 768px) {
+        flex-direction: column;
+      }
+
       .descriptionblock {
         width: 47.5%;
+
+        @media (max-width: 768px) {
+          width: 100%;
+        }
       }
     }
   }

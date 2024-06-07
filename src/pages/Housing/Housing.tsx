@@ -60,25 +60,25 @@ const Housing = () => {
               <div className={styles.location_infos}>
                 <p className={styles.title}>{house.title}</p>
                 <p className={styles.location}>{house.location}</p>
+                <Tags tags={house.tags} />
               </div>
-              <div className={styles.owner}>
-                <p className={styles.name}>
-                  {house.host.name.split(" ")[0]}
-                  <br />
-                  {house.host.name.split(" ")[1]}
-                </p>
-                <div className={styles.picture_div}>
-                  <img
-                    className={styles.picture}
-                    src={house.host.picture}
-                    alt="Host's picture."
-                  />
+              <div className={styles.plus}>
+                <div className={styles.owner}>
+                  <p className={styles.name}>
+                    {house.host.name.split(" ")[0]}
+                    <br />
+                    {house.host.name.split(" ")[1]}
+                  </p>
+                  <div className={styles.picture_div}>
+                    <img
+                      className={styles.picture}
+                      src={house.host.picture}
+                      alt="Host's picture."
+                    />
+                  </div>
                 </div>
+                <Stars note={parseInt(house.rating, 10)} />
               </div>
-            </div>
-            <div className={styles.other}>
-              <Tags tags={house.tags} />
-              <Stars note={parseInt(house.rating, 10)} />
             </div>
             <div className={styles.descriptionblocks}>
               <div className={styles.descriptionblock}>

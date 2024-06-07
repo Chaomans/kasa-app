@@ -7,8 +7,10 @@ type TagsProps = {
 const Tags = ({ tags }: TagsProps) => {
   return (
     <div className={styles.tags}>
-      {tags.map((tag) => (
-        <p className={styles.tag}>{tag}</p>
+      {tags.map((tag, i) => (
+        <p className={styles.tag} key={i}>
+          {tag}
+        </p>
       ))}
     </div>
   );

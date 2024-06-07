@@ -3,11 +3,21 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 220px;
+  height: 225px;
   width: 100%;
   margin: 40px 0;
   border: 1px solid #000;
   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+  transition: all 0.2s;
+  padding: 10px 20px;
+
+  @media (max-width: 1024px) {
+    height: 200px;
+  }
+
+  @media (max-width: 768px) {
+    height: 111px;
+  }
 
   &.home {
     background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
@@ -29,5 +39,10 @@
     font-size: 48px;
     text-shadow: 1px 0 #000, -1px 0 #000, 0 1px #000, 0 -1px #000;
     color: #fff;
+
+    @media (max-width: 768px) {
+      font-size: 24px;
+      justify-content: flex-start;
+    }
   }
 }
