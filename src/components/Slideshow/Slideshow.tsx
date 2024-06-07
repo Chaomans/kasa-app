@@ -27,11 +27,15 @@ const Slideshow = ({ images, title }: SlideshowProps) => {
 
   return (
     <div className={styles.slideshow}>
-      <button
-        className={styles.previous}
-        onClick={() => previousImage()}
-      ></button>
-      <button className={styles.next} onClick={() => nextImage()}></button>
+      {images.length !== 1 && (
+        <button
+          className={styles.previous}
+          onClick={() => previousImage()}
+        ></button>
+      )}
+      {images.length !== 1 && (
+        <button className={styles.next} onClick={() => nextImage()}></button>
+      )}
       <div className={`${styles.imgDiv} ${loading ? styles.loading : ""}`}>
         <img
           src={imgSrc}
