@@ -10,7 +10,6 @@ const Lightbox = ({ images, title }: LightboxProps) => {
   setIndex(0);
 
   const loadImage = (src: string) => {
-    // const image = <img src={src} alt={`Image ${index + 1} of ${title}`}></img>;
     return <img src={src} alt={`Image ${index + 1} of ${title}`}></img>;
   };
 

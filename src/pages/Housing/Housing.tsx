@@ -45,68 +45,73 @@ const Housing = () => {
   };
 
   return (
-    <div className={styles.housing}>
-      {error && <div className={styles.error}>{error}</div>}
-      {isPending && (
-        <div className={styles.pending}>
-          <p>Chargement...</p>
-        </div>
-      )}
-      {house && (
-        <>
-          <Slideshow images={house.pictures} title={house.title} />
-          <div className={styles.informations}>
-            <div className={styles.principal}>
-              <div className={styles.location_infos}>
-                <p className={styles.title}>{house.title}</p>
-                <p className={styles.location}>{house.location}</p>
-                <Tags tags={house.tags} />
-              </div>
-              <div className={styles.plus}>
-                <div className={styles.owner}>
-                  <p className={styles.name}>
-                    {house.host.name.split(" ")[0]}
-                    <br />
-                    {house.host.name.split(" ")[1]}
-                  </p>
-                  <div className={styles.picture_div}>
-                    <img
-                      className={styles.picture}
-                      src={house.host.picture}
-                      alt="Host's picture."
-                    />
+    <>
+      {!error && !isPending && !house ? (
+        <NotFound />
+      ) : (
+        <div className={styles.housing}>
+          {error && <div className={styles.error}>{error}</div>}
+          {isPending && (
+            <div className={styles.pending}>
+              <p>Chargement...</p>
+            </div>
+          )}
+          {house && (
+            <>
+              <Slideshow images={house.pictures} title={house.title} />
+              <div className={styles.informations}>
+                <div className={styles.principal}>
+                  <div className={styles.location_infos}>
+                    <p className={styles.title}>{house.title}</p>
+                    <p className={styles.location}>{house.location}</p>
+                    <Tags tags={house.tags} />
+                  </div>
+                  <div className={styles.plus}>
+                    <div className={styles.owner}>
+                      <p className={styles.name}>
+                        {house.host.name.split(" ")[0]}
+                        <br />
+                        {house.host.name.split(" ")[1]}
+                      </p>
+                      <div className={styles.picture_div}>
+                        <img
+                          className={styles.picture}
+                          src={house.host.picture}
+                          alt="Host's picture."
+                        />
+                      </div>
+                    </div>
+                    <Stars note={parseInt(house.rating, 10)} />
                   </div>
                 </div>
-                <Stars note={parseInt(house.rating, 10)} />
+                <div className={styles.descriptionblocks}>
+                  <div className={styles.descriptionblock}>
+                    <DescriptionBlock
+                      id="description"
+                      title="Description"
+                      onChangeState={handleChangeState}
+                    >
+                      {house.description}
+                    </DescriptionBlock>
+                  </div>
+                  <div className={styles.descriptionblock}>
+                    <DescriptionBlock
+                      id="equipments"
+                      title="Équipements"
+                      onChangeState={handleChangeState}
+                    >
+                      {house.equipments.map((equip) => (
+                        <p key={equip}>{equip}</p>
+                      ))}
+                    </DescriptionBlock>
+                  </div>
+                </div>
               </div>
-            </div>
-            <div className={styles.descriptionblocks}>
-              <div className={styles.descriptionblock}>
-                <DescriptionBlock
-                  id="description"
-                  title="Description"
-                  onChangeState={handleChangeState}
-                >
-                  {house.description}
-                </DescriptionBlock>
-              </div>
-              <div className={styles.descriptionblock}>
-                <DescriptionBlock
-                  id="equipments"
-                  title="Équipements"
-                  onChangeState={handleChangeState}
-                >
-                  {house.equipments.map((equip) => (
-                    <p key={equip}>{equip}</p>
-                  ))}
-                </DescriptionBlock>
-              </div>
-            </div>
-          </div>
-        </>
+            </>
+          )}
+        </div>
       )}
-      {!error && !isPending && !house && <NotFound />}
-    </div>
+    </>
   );
 };
 
